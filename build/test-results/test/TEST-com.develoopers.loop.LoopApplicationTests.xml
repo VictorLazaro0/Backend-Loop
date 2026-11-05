@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.develoopers.loop.LoopApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-11-04T21:56:52.313Z" hostname="192.168.1.10" time="3.949">
+  <properties/>
+  <testcase name="contextLoads()" classname="com.develoopers.loop.LoopApplicationTests" time="0.339"/>
+  <system-out><![CDATA[15:56:52.414 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.develoopers.loop.LoopApplicationTests]: LoopApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:56:52.483 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.develoopers.loop.LoopApplication for test class com.develoopers.loop.LoopApplicationTests
+15:56:52.531 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.develoopers.loop.LoopApplicationTests]: LoopApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:56:52.532 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.develoopers.loop.LoopApplication for test class com.develoopers.loop.LoopApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.2)
+
+2026-11-04T15:56:52.701-06:00  INFO 31726 --- [loop] [    Test worker] c.develoopers.loop.LoopApplicationTests  : Starting LoopApplicationTests using Java 21.0.12.1 with PID 31726 (started by victorlazaro in /Users/victorlazaro/Desktop/ProyectoLoop/loop)
+2026-11-04T15:56:52.702-06:00  INFO 31726 --- [loop] [    Test worker] c.develoopers.loop.LoopApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2026-11-04T15:56:53.050-06:00  INFO 31726 --- [loop] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-04T15:56:53.084-06:00  INFO 31726 --- [loop] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 4 JPA repository interfaces.
+2026-11-04T15:56:53.316-06:00  INFO 31726 --- [loop] [    Test worker] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-11-04T15:56:53.355-06:00  INFO 31726 --- [loop] [    Test worker] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.13.Final
+2026-11-04T15:56:53.598-06:00  INFO 31726 --- [loop] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-04T15:56:53.619-06:00  INFO 31726 --- [loop] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T15:56:53.920-06:00  INFO 31726 --- [loop] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@47374fa5
+2026-11-04T15:56:53.922-06:00  INFO 31726 --- [loop] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-04T15:56:53.969-06:00  WARN 31726 --- [loop] [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-11-04T15:56:53.981-06:00  INFO 31726 --- [loop] [    Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/loopdb]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 26.7
+	Default catalog/schema: loopdb/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-04T15:56:54.584-06:00  INFO 31726 --- [loop] [    Test worker] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: create table comments (id_comment integer not null auto_increment, date_comment datetime(6) not null, text_comment varchar(255) not null, id_post integer, id_user integer, primary key (id_comment)) engine=InnoDB
+Hibernate: create table posts (id_posts integer not null auto_increment, date_post datetime(6) not null, img_post varchar(255), labels varchar(255) not null, likes integer, link varchar(255) not null, resume_description varchar(255) not null, text varchar(255) not null, id_user integer, primary key (id_posts)) engine=InnoDB
+Hibernate: create table profile (id_profile integer not null auto_increment, biography varchar(255) not null, create_date datetime(6) not null, img_profile LONGTEXT, occupation varchar(255) not null, skills varchar(255) not null, primary key (id_profile)) engine=InnoDB
+Hibernate: create table users (id_user integer not null auto_increment, email varchar(255) not null, first_name varchar(255) not null, last_name varchar(255) not null, password varchar(255) not null, phone varchar(255) not null, username varchar(255) not null, id_profile integer, primary key (id_user)) engine=InnoDB
+Hibernate: alter table users drop index UK6dotkott2kjsp8vw4d0m25fb7
+Hibernate: alter table users add constraint UK6dotkott2kjsp8vw4d0m25fb7 unique (email)
+Hibernate: alter table users drop index UKr43af9ap4edm43mmtq01oddj6
+Hibernate: alter table users add constraint UKr43af9ap4edm43mmtq01oddj6 unique (username)
+Hibernate: alter table users drop index UKrcle35tk5t6py9hf7uow9qkcw
+Hibernate: alter table users add constraint UKrcle35tk5t6py9hf7uow9qkcw unique (id_profile)
+Hibernate: alter table comments add constraint FK9w3fyg8dv7lsosmxiky6p6x7n foreign key (id_post) references posts (id_posts)
+Hibernate: alter table comments add constraint FK2e1j871ildbkagpidsson8krk foreign key (id_user) references users (id_user)
+Hibernate: alter table posts add constraint FKi39p5vj96ak6nrx3k8kswyr8k foreign key (id_user) references users (id_user)
+Hibernate: alter table users add constraint FKj12sukkbaheeseduc7tn6x3gs foreign key (id_profile) references profile (id_profile)
+2026-11-04T15:56:55.466-06:00  INFO 31726 --- [loop] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-04T15:56:55.527-06:00  INFO 31726 --- [loop] [    Test worker] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-04T15:56:55.646-06:00  WARN 31726 --- [loop] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-11-04T15:56:55.915-06:00  INFO 31726 --- [loop] [    Test worker] c.develoopers.loop.LoopApplicationTests  : Started LoopApplicationTests in 3.335 seconds (process running for 4.45)
+]]></system-out>
+  <system-err><![CDATA[Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (/Users/victorlazaro/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.18.15/de6980bb799c25bb1fe9e6c434201299cb5e694e/byte-buddy-agent-1.18.15.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+</testsuite>
